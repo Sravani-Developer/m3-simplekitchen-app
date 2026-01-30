@@ -1,0 +1,130 @@
+/* Nesting */
+/* SCSS */
+nav {
+  font-size: 1em;
+  font-font-weight: bold;
+  float: left;
+  width: 95%;
+}
+nav ul {
+  list-style-type: none;
+  width: 100%;
+}
+nav ul li {
+  float: left;
+  margin: 0 5px 0 0;
+  color: white;
+}
+nav ul li a {
+  text-decoration: none;
+  color: white;
+}
+nav ul li a:hover {
+  text-decoration: underline;
+}
+nav ul .nav-right {
+  float: right;
+  margin-right: 0;
+}
+
+/* Variables */
+html {
+  font-size: 1em;
+  width: 100%;
+}
+
+body {
+  font-family: Arial, Helvetica, Sans-Serif;
+  background: #daaa0e;
+}
+
+header {
+  height: 50px;
+  width: 1350px;
+  margin: 0.3em auto 0.6em auto;
+}
+
+main {
+  background: white;
+  width: 1350px;
+  min-height: 535px;
+  padding: 0%;
+  margin: 0 auto;
+  margin-top: 45px;
+  overflow: hidden;
+  
+}
+main #intro-image {
+  float: left;
+  width: 800px;
+}
+main #intro-image img {
+  width: 800px;
+}
+main #intro-text {
+  width: 550px;
+  height: 407px;
+  float: left;
+  background: #d4d5d8;
+  text-align: center;
+  padding-top: 8em;
+}
+main #intro-text h3 {
+  font-size: 2em;
+  color: #313130;
+}
+main #intro-text span {
+  font-family: "Sacramento", cursive;
+  font-size: 2em;
+}
+
+footer {
+  width: 1350px;
+  margin: 2em auto;
+  padding-left: 80px;
+  font-size: 0.85em;
+}
+
+button, .submit-buttton {
+  color: white;
+  width: 100px;
+  height: 40px;
+  background: #daaa0e;
+  margin-top: 2em;
+}
+
+.submit-buttton {
+  border: 1px #313130;
+}
+
+/* Registrants table */
+.registrants-page {
+  width: 1350px;
+  margin: 40px auto;
+}
+
+.registrants-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+.registrants-table th {
+  background: #000;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 18px;
+  border: 2px solid #666;
+}
+
+.registrants-table td {
+  padding: 18px;
+  border: 2px solid #666;
+  text-align: center;
+}
+
+.registrants-body main {
+  min-height: 0;
+}
+
+/*# sourceMappingURL=styles.css.map */

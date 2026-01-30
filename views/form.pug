@@ -1,0 +1,43 @@
+extends layout
+
+block content
+    .register-page
+        -data = data || {}
+
+        .register-panel
+            .register-left
+                .sk-title Simple Kitchen
+                .sk-subtitle Simple &amp; Comforting
+                .sk-subtitle Recipes All Year Round
+
+            .register-right#register-right
+                if errors
+                    ul.my-errors
+                        for error in errors
+                            li= error.msg
+                h2 Register to subscribe
+                form(action="/register" method="POST" class="form-registration" id="register-form")
+                    label(for="name") Name:
+                    input(
+                        type="text"
+                        id="name"
+                        name="name"
+                        class="form-control"
+                        value=data.name
+                    )
+
+                    label(for="email") Email:
+                    input(
+                        type="email"
+                        id="email"
+                        name="email"
+                        class="form-control"
+                        value=data.email
+                    )
+
+                    input(
+                        type="submit" 
+                        value="Register"
+                        class="btn btn-lg btn-primary btn-block register-btn"
+                    )
+    script(src="/js/register.js")

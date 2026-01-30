@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    title= `${title}`
+    link(rel='preconnect', href='https://fonts.gstatic.com')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css2?family=Sacramento&display=swap')
+    link(rel='stylesheet', href='/css/form.css')
+    link(rel='stylesheet', href='/css/styles.css')
+  body(class=bodyClass)
+    header
+      nav
+        ul
+          li
+            a(href='/') Home
+          li |
+          li
+            a(href='/registrations') Blog
+          li.nav-right
+            a(href='/register') Register
+    main
+      block content
+    footer
+      | &copy; Copyright 2022
