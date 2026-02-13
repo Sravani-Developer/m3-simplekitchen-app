@@ -1,22 +1,41 @@
-require('dotenv').config();
-const mongoose = require('mongoose');
+#!/usr/bin/env node
 
-mongoose.connect(process.env.DATABASE, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
+const app = require('./app');
+const http = require('http');
+
+const port = process.env.PORT || 3000;
+app.set('port', port);
+
+const server = http.createServer(app);
+
+// Start server
+server.listen(port);
+
+// When server starts successfully
+server.on('listening', () => {
+  console.log(`Express is running on port ${port}`);
 });
 
-mongoose.connection
-  .on('open', () => {
-    console.log('Mongoose connection open');
-  })
-  .on('error', (err) => {
-    console.log(`Connection error: ${err.message}`);
-  });
+// Handle errors
+server.on('error', (error) => {
+  if (error.syscall !== 'listen') {
+    throw error;
+  }
 
-require('./models/Registration');
-const app = require('./app');
+  const bind = typeof port === 'string'
+    ? 'Pipe ' + port
+    : 'Port ' + port;
 
-const server = app.listen(3000, () => {
-  console.log(`Express is running on port ${server.address().port}`);
+  switch (error.code) {
+    case 'EACCES':
+      console.error(bind + ' requires elevated privileges');
+      process.exit(1);
+      break;
+    case 'EADDRINUSE':
+      console.error(bind + ' is already in use');
+      process.exit(1);
+      break;
+    default:
+      throw error;
+  }
 });
